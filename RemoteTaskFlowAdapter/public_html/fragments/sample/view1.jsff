@@ -1,0 +1,19 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<jsp:root xmlns:jsp="http://java.sun.com/JSP/Page" version="2.1"
+          xmlns:af="http://xmlns.oracle.com/adf/faces/rich"
+          xmlns:f="http://java.sun.com/jsf/core">
+  <af:panelStretchLayout id="psl1" topHeight="30px">
+    <f:facet name="bottom"/>
+    <f:facet name="center">
+      <af:outputText value="I am a fragment with companyId parameter: #{pageFlowScope.companyId} #{pageFlowScope.companyId.class}." id="ot1"
+                     inlineStyle="font-size:large;"/>
+    </f:facet>
+    <f:facet name="start"/>
+    <f:facet name="end"/>
+    <f:facet name="top">
+      <af:toolbar id="t1">
+        <af:commandToolbarButton text="Done" id="ctb1" action="done"/>
+      </af:toolbar>
+    </f:facet>
+  </af:panelStretchLayout>
+</jsp:root>

@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<adfc-config xmlns="http://xmlns.oracle.com/adf/controller" version="1.2">
+  <task-flow-definition id="FragmentWrapper">
+    <default-activity id="__1">fragment_wrapper</default-activity>
+    <input-parameter-definition id="__8">
+      <name id="__7">taskFlowId</name>
+      <value>#{pageFlowScope.taskFlowId}</value>
+    </input-parameter-definition>
+    <input-parameter-definition id="__10">
+      <name id="__9">parameters</name>
+      <value>#{pageFlowScope.parameters}</value>
+    </input-parameter-definition>
+    <managed-bean id="__2">
+      <managed-bean-name id="__5">fragmentWrapper</managed-bean-name>
+      <managed-bean-class id="__3">com.soadev.view.FragmentWrapperForm</managed-bean-class>
+      <managed-bean-scope id="__4">view</managed-bean-scope>
+    </managed-bean>
+    <view id="fragment_wrapper">
+      <page>/pages/soadev/fragment_wrapper.jspx</page>
+    </view>
+    <task-flow-return id="taskFlowReturn1">
+      <outcome id="__11">
+        <name>taskFlowReturn1</name>
+      </outcome>
+    </task-flow-return>
+    <task-flow-call id="taskFlowCall">
+      <dynamic-task-flow-reference>#{pageFlowScope.launchTaskFlowId}</dynamic-task-flow-reference>
+      <input-parameter-map>#{pageFlowScope.launchParameterMap}</input-parameter-map>
+      <run-as-dialog>
+        <display-type id="__20">
+          <inline-popup/>
+        </display-type>
+      </run-as-dialog>
+    </task-flow-call>
+    <control-flow-rule id="__12">
+      <from-activity-id id="__13">fragment_wrapper</from-activity-id>
+      <control-flow-case id="__14">
+        <from-outcome id="__16">done</from-outcome>
+        <to-activity-id id="__15">taskFlowReturn1</to-activity-id>
+      </control-flow-case>
+      <control-flow-case id="__18">
+        <from-outcome id="__19">launchActivity</from-outcome>
+        <to-activity-id id="__17">taskFlowCall</to-activity-id>
+      </control-flow-case>
+    </control-flow-rule>
+    <visibility id="__6">
+      <url-invoke-allowed/>
+    </visibility>
+  </task-flow-definition>
+</adfc-config>

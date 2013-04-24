@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<pageDefinition xmlns="http://xmlns.oracle.com/adfm/uimodel"
+                version="11.1.1.62.29" id="fragment_wrapperPageDef"
+                Package="com.soadev.remotetaskflowapp.view.pageDefs">
+  <parameters/>
+  <executables>
+    <variableIterator id="variables"/>
+    <taskFlow id="dynamicRegion1"
+              taskFlowId="${viewScope.fragmentWrapper.dynamicTaskFlowId}"
+              activation="deferred"
+              xmlns="http://xmlns.oracle.com/adf/controller/binding"
+              parametersMap="#{viewScope.fragmentWrapper.parameterMap}"/>
+  </executables>
+  <bindings/>
+  <eventMap xmlns="http://xmlns.oracle.com/adfm/contextualEvent">
+    <event name="transDirtyEvent">
+      <producer region="*">
+        <consumer handler="setExpressionValue">
+          <parameters>
+            <parameter name="expression" value="\#{viewScope.itemContainerForm.dirty}"/>
+             <parameter name="newValue" value="#{payLoad}"/>
+          </parameters>
+        </consumer>
+      </producer>
+    </event>
+  </eventMap>
+</pageDefinition>

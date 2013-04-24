@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<adfc-config xmlns="http://xmlns.oracle.com/adf/controller" version="1.2">
+  <view id="index">
+    <page>/index.jspx</page>
+  </view>
+  <task-flow-call id="taskFlowCall1">
+    <task-flow-reference>
+      <document>WEB-INF/sample-remote-task-flow.xml</document>
+      <id>sample-remote-task-flow</id>
+    </task-flow-reference>
+    <input-parameter id="__8">
+      <name id="__7">name</name>
+      <value id="__6">Rommel</value>
+    </input-parameter>
+    <remote-app-url>http://127.0.0.1:7101/RemoteTaskFlowApp-ViewController-context-root/faces/adf.task-flow</remote-app-url>
+  </task-flow-call>
+  <view id="view1">
+    <page>/view1.jspx</page>
+  </view>
+  <control-flow-rule id="__1">
+    <from-activity-id id="__2">index</from-activity-id>
+    <control-flow-case id="__3">
+      <from-outcome id="__5">callRemote</from-outcome>
+      <to-activity-id id="__4">taskFlowCall1</to-activity-id>
+    </control-flow-case>
+    <control-flow-case id="__9">
+      <from-outcome id="__11">done</from-outcome>
+      <to-activity-id id="__10">view1</to-activity-id>
+    </control-flow-case>
+  </control-flow-rule>
+  <managed-bean id="__12">
+    <managed-bean-name id="__14">sampleForm</managed-bean-name>
+    <managed-bean-class id="__15">soadev.taskflowadapter.view.backing.SampleForm</managed-bean-class>
+    <managed-bean-scope id="__13">view</managed-bean-scope>
+  </managed-bean>
+</adfc-config>

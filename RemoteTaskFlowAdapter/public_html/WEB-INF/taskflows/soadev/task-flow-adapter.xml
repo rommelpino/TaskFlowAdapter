@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<adfc-config xmlns="http://xmlns.oracle.com/adf/controller" version="1.2">
+  <task-flow-definition id="task-flow-adapter">
+    <default-activity id="__1">remote_adapter</default-activity>
+    <input-parameter-definition id="__3">
+      <name id="__2">taskFlowId</name>
+      <value>#{pageFlowScope.taskFlowId}</value>
+    </input-parameter-definition>
+    <input-parameter-definition id="__6">
+      <name id="__7">remoteAppURL</name>
+      <value>#{pageFlowScope.remoteAppURL}</value>
+    </input-parameter-definition>
+    <input-parameter-definition id="__5">
+      <name id="__4">parameterMap</name>
+      <value>#{pageFlowScope.parameterMap}</value>
+    </input-parameter-definition>
+    <managed-bean id="__15">
+      <managed-bean-name id="__14">taskFlowAdapter</managed-bean-name>
+      <managed-bean-class id="__17">soadev.taskflowadapter.view.backing.TaskFlowAdapterForm</managed-bean-class>
+      <managed-bean-scope id="__16">pageFlow</managed-bean-scope>
+    </managed-bean>
+    <view id="remote_adapter">
+      <page>/fragments/soadev/remote_adapter.jsff</page>
+    </view>
+    <task-flow-return id="taskFlowReturn1">
+      <outcome id="__8">
+        <name>taskFlowReturn1</name>
+      </outcome>
+    </task-flow-return>
+    <control-flow-rule id="__9">
+      <from-activity-id id="__10">remote_adapter</from-activity-id>
+      <control-flow-case id="__11">
+        <from-outcome id="__13">done</from-outcome>
+        <to-activity-id id="__12">taskFlowReturn1</to-activity-id>
+      </control-flow-case>
+    </control-flow-rule>
+    <use-page-fragments/>
+  </task-flow-definition>
+</adfc-config>

@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<pageDefinition xmlns="http://xmlns.oracle.com/adfm/uimodel"
+                version="11.1.1.62.29" id="sample3PageDef"
+                Package="soadev.taskflowadapter.view.pageDefs.pageDefs">
+  <parameters/>
+  <executables>
+    <variableIterator id="variables"/>
+    <taskFlow id="taskflowadapter1"
+              taskFlowId="/WEB-INF/taskflows/soadev/task-flow-adapter.xml#task-flow-adapter"
+              activation="deferred"
+              xmlns="http://xmlns.oracle.com/adf/controller/binding">
+      <parameters>
+        <parameter id="taskFlowId"
+                   value="/WEB-INF/taskflows/sample/sample-fragments-task-flow.xml#sample-fragments-task-flow"/>
+        <parameter id="remoteAppURL"
+                   value="http://127.0.0.1:7101/NISWeb/faces/adf.task-flow"/>
+      </parameters>
+    </taskFlow>
+  </executables>
+  <bindings/>
+</pageDefinition>

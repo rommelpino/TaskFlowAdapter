@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<adfc-config xmlns="http://xmlns.oracle.com/adf/controller" version="1.2">
+  <task-flow-definition id="sample-fragments-task-flow">
+    <default-activity id="__1">view1</default-activity>
+    <input-parameter-definition id="__9">
+      <name id="__8">name</name>
+      <value>#{pageFlowScope.name}</value>
+    </input-parameter-definition>
+    <input-parameter-definition id="__11">
+      <name id="__10">companyId</name>
+      <value>#{pageFlowScope.companyId}</value>
+      <class>java.lang.Long</class>
+      <required/>
+    </input-parameter-definition>
+    <view id="view1">
+      <page>/fragments/sample/view1.jsff</page>
+    </view>
+    <task-flow-return id="taskFlowReturn1">
+      <outcome id="__2">
+        <name>taskFlowReturn1</name>
+      </outcome>
+    </task-flow-return>
+    <control-flow-rule id="__3">
+      <from-activity-id id="__4">view1</from-activity-id>
+      <control-flow-case id="__6">
+        <from-outcome id="__7">done</from-outcome>
+        <to-activity-id id="__5">taskFlowReturn1</to-activity-id>
+      </control-flow-case>
+    </control-flow-rule>
+    <use-page-fragments/>
+  </task-flow-definition>
+</adfc-config>

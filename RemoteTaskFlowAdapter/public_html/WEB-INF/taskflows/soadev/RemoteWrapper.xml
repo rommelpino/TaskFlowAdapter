@@ -1,0 +1,79 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<adfc-config xmlns="http://xmlns.oracle.com/adf/controller" version="1.2">
+  <task-flow-definition id="RemoteWrapper">
+    <default-activity id="__45">taskFlowCall1</default-activity>
+    <input-parameter-definition id="__18">
+      <name id="__19">taskFlowId</name>
+      <value>#{pageFlowScope.taskFlowId}</value>
+      <required/>
+    </input-parameter-definition>
+    <input-parameter-definition id="__22">
+      <name id="__23">returnTaskFlowButtonId</name>
+      <value>#{pageFlowScope.returnTaskFlowButtonId}</value>
+      <required/>
+    </input-parameter-definition>
+    <input-parameter-definition id="__2">
+      <name id="__3">parameters</name>
+      <value>#{pageFlowScope.parameters}</value>
+    </input-parameter-definition>
+    <input-parameter-definition id="__1">
+      <name id="__11">remoteAppURL</name>
+      <value>#{pageFlowScope.remoteAppURL}</value>
+    </input-parameter-definition>
+    <managed-bean id="__16">
+      <managed-bean-name id="__17">remoteWrapper</managed-bean-name>
+      <managed-bean-class id="__15">soadev.taskflowadapter.view.backing.RemoteWrapperForm</managed-bean-class>
+      <managed-bean-scope id="__14">pageFlow</managed-bean-scope>
+    </managed-bean>
+    <task-flow-call id="taskFlowCall1">
+      <task-flow-reference>
+        <document>/WEB-INF/taskflows/soadev/FragmentWrapper.xml</document>
+        <id>FragmentWrapper</id>
+      </task-flow-reference>
+      <input-parameter id="__4">
+        <name id="__6">parameters</name>
+        <value id="__5">#{pageFlowScope.parameters}</value>
+      </input-parameter>
+      <input-parameter id="__8">
+        <name id="__9">taskFlowId</name>
+        <value id="__10">#{pageFlowScope.taskFlowId}</value>
+      </input-parameter>
+      <remote-app-url>#{pageFlowScope.remoteAppURL}</remote-app-url>
+    </task-flow-call>
+    <method-call id="methodCall1">
+      <method>#{pageFlowScope.remoteWrapper.returnTaskFlow}</method>
+      <outcome id="__13">
+        <fixed-outcome>success</fixed-outcome>
+      </outcome>
+    </method-call>
+    <task-flow-return id="taskFlowReturn1">
+      <outcome id="__7">
+        <name>taskFlowReturn1</name>
+      </outcome>
+    </task-flow-return>
+    <view id="empty">
+      <page>/empty.jspx</page>
+    </view>
+    <control-flow-rule id="__27">
+      <from-activity-id id="__28">*</from-activity-id>
+      <control-flow-case id="__29">
+        <to-activity-id id="__30">methodCall1</to-activity-id>
+      </control-flow-case>
+    </control-flow-rule>
+    <control-flow-rule id="__32">
+      <from-activity-id id="__33">methodCall1</from-activity-id>
+      <control-flow-case id="__36">
+        <to-activity-id id="__34">empty</to-activity-id>
+      </control-flow-case>
+    </control-flow-rule>
+    <control-flow-rule id="__37">
+      <from-activity-id id="__38">empty</from-activity-id>
+      <control-flow-case id="__40">
+        <to-activity-id id="__39">taskFlowReturn1</to-activity-id>
+      </control-flow-case>
+    </control-flow-rule>
+    <visibility id="__31">
+      <url-invoke-allowed/>
+    </visibility>
+  </task-flow-definition>
+</adfc-config>
