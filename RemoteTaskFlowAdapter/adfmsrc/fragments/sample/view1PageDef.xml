@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<pageDefinition xmlns="http://xmlns.oracle.com/adfm/uimodel"
+                version="11.1.1.62.29" id="view1PageDef"
+                Package="fragments.sample">
+  <parameters/>
+  <executables>
+    <variableIterator id="variables"/>
+  </executables>
+  <bindings>
+    <methodAction id="launchActivityEventProducer"
+                  InstanceName="TaskFlowAdapterHelper.dataProvider"
+                  DataControl="TaskFlowAdapterHelper" RequiresUpdateModel="true"
+                  Action="invokeMethod" MethodName="produceEvent"
+                  IsViewObjectMethod="false">
+      <events xmlns="http://xmlns.oracle.com/adfm/contextualEvent">
+        <event name="launchActivityEvent"/>
+      </events>
+    </methodAction>
+  </bindings>
+</pageDefinition>

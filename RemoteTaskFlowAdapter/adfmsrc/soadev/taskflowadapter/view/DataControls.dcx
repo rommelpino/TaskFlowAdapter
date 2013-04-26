@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<DataControlConfigs xmlns="http://xmlns.oracle.com/adfm/configuration"
+                    version="11.1.1.62.29" id="DataControls"
+                    Package="soadev.taskflowadapter.view">
+  <AdapterDataControl id="TaskFlowAdapterHelper"
+                      FactoryClass="oracle.adf.model.adapter.DataControlFactoryImpl"
+                      ImplDef="oracle.adf.model.adapter.bean.BeanDefinition"
+                      SupportsTransactions="false" SupportsSortCollection="true"
+                      SupportsResetState="false" SupportsRangesize="false"
+                      SupportsFindMode="false" SupportsUpdates="true"
+                      Definition="soadev.taskflowadapter.view.helper.TaskFlowAdapterHelper"
+                      BeanClass="soadev.taskflowadapter.view.helper.TaskFlowAdapterHelper"
+                      xmlns="http://xmlns.oracle.com/adfm/datacontrol">
+    <CreatableTypes>
+      <TypeInfo FullName="soadev.taskflowadapter.view.helper.TaskFlowAdapterHelper"/>
+    </CreatableTypes>
+    <Source>
+      <bean-definition BeanClass="soadev.taskflowadapter.view.helper.TaskFlowAdapterHelper"
+                       xmlns="http://xmlns.oracle.com/adfm/adapter/bean"/>
+    </Source>
+  </AdapterDataControl>
+</DataControlConfigs>

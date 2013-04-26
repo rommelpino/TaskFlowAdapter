@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<JavaBean xmlns="http://xmlns.oracle.com/adfm/beanmodel" version="11.1.1.62.29"
+          id="TaskFlowAdapterHelper"
+          Package="soadev.taskflowadapter.view.helper"
+          BeanClass="soadev.taskflowadapter.view.helper.TaskFlowAdapterHelper"
+          isJavaBased="true">
+  <MethodAccessor IsCollection="false" Type="void" id="launchActivity"
+                  ReturnNodeName="Return">
+    <ParameterInfo id="title" Type="java.lang.String" isStructured="false"/>
+    <ParameterInfo id="taskFlowId" Type="java.lang.String"
+                   isStructured="false"/>
+    <ParameterInfo id="params" Type="java.util.Map" isStructured="false"/>
+  </MethodAccessor>
+  <MethodAccessor IsCollection="false" Type="void" id="produceEvent"
+                  ReturnNodeName="Return"/>
+  <ConstructorMethod IsCollection="true"
+                     Type="soadev.taskflowadapter.view.helper.TaskFlowAdapterHelper"
+                     BeanClass="soadev.taskflowadapter.view.helper.TaskFlowAdapterHelper"
+                     id="TaskFlowAdapterHelper"/>
+</JavaBean>
