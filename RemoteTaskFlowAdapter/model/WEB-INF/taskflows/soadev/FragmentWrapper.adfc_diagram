@@ -18,7 +18,7 @@
       <property
          name="exceptionHandler">false</property>
       <property
-         name="y">98.79883</property>
+         name="y">97.74707</property>
       <property
          name="x">274.5</property>
    </TaskFlowReturn>
@@ -47,12 +47,16 @@
       <property
          name="fromOutcome">done</property>
       <property
-         name="sdm:polyPoints">R46,120.5,164.24707,233.5,98.44824,L50</property>
+         name="sdm:polyPoints">R46,120.5,164.24707,233.5,97.396484,L50</property>
    </ControlFlowCase>
    <TaskFlowCall
       id="TaskFlowCall5">
       <property
+         name="taskFlowId">FragmentWrapper</property>
+      <property
          name="activityId">taskFlowCall</property>
+      <property
+         name="documentReference">/WEB-INF/taskflows/soadev/FragmentWrapper.xml</property>
       <property
          name="runAsDialog">true</property>
       <property

@@ -6,15 +6,14 @@
     <f:facet name="bottom">
       <af:panelGroupLayout id="pgl1">
         <af:commandButton text="Done" id="cbReturn" action="done"
-                          binding="#{pageFlowScope.taskFlowAdapter.returnButton}"
+                          binding="#{viewScope.taskFlowAdapter.returnButton}"
                           visible="false"/>
         <af:resource type="javascript" source="/js/util.js" />
       </af:panelGroupLayout>
     </f:facet>
     <f:facet name="center">
       <af:inlineFrame id="if1" inlineStyle="width:100%; height:100.0%;"
-                      source="#{pageFlowScope.taskFlowAdapter.remoteTaskFlowURL}"
-                      binding="#{pageFlowScope.taskFlowAdapter.inlineFrame}"/>
+                      source="#{viewScope.taskFlowAdapter.remoteTaskFlowURL}"/>
     </f:facet>
   </af:panelStretchLayout>
 </jsp:root>

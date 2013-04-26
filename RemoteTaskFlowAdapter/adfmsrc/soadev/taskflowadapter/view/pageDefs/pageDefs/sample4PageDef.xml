@@ -11,9 +11,9 @@
               xmlns="http://xmlns.oracle.com/adf/controller/binding">
       <parameters>
         <parameter id="taskFlowId"
-                   value="/WEB-INF/taskflows/inv/item-list-task-flow.xml#item-list-task-flow"/>
+                   value="/WEB-INF/flows/job-list-task-flow.xml#job-list-task-flow"/>
         <parameter id="remoteAppURL"
-                   value="http://127.0.0.1:7101/NISWeb/faces/adf.task-flow"/>
+                   value="http://127.0.0.1:7101/LooselyCoupledBTF/faces/adf.task-flow"/>
         <parameter id="parameterMap"
                    value="#{viewScope.sampleForm.sampleParameterMap}"/>
       </parameters>

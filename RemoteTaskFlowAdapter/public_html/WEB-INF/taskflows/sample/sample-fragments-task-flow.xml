@@ -12,6 +12,11 @@
       <class>java.lang.Long</class>
       <required/>
     </input-parameter-definition>
+    <managed-bean id="__13">
+      <managed-bean-name id="__15">sampleForm</managed-bean-name>
+      <managed-bean-class id="__14">soadev.taskflowadapter.view.backing.SampleForm</managed-bean-class>
+      <managed-bean-scope id="__12">view</managed-bean-scope>
+    </managed-bean>
     <view id="view1">
       <page>/fragments/sample/view1.jsff</page>
     </view>

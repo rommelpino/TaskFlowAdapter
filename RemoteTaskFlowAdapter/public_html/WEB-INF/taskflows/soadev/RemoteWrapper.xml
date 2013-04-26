@@ -38,6 +38,10 @@
         <name id="__9">taskFlowId</name>
         <value id="__10">#{pageFlowScope.taskFlowId}</value>
       </input-parameter>
+      <input-parameter id="__21">
+        <name>parameterMap</name>
+        <value></value>
+      </input-parameter>
       <remote-app-url>#{pageFlowScope.remoteAppURL}</remote-app-url>
     </task-flow-call>
     <method-call id="methodCall1">

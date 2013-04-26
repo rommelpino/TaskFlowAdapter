@@ -5,7 +5,11 @@
    <TaskFlowCall
       id="TaskFlowCall2">
       <property
+         name="taskFlowId">FragmentWrapper</property>
+      <property
          name="activityId">taskFlowCall1</property>
+      <property
+         name="documentReference">/WEB-INF/taskflows/soadev/FragmentWrapper.xml</property>
       <property
          name="start">true</property>
       <property

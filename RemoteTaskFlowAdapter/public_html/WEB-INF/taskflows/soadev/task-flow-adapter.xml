@@ -17,7 +17,7 @@
     <managed-bean id="__15">
       <managed-bean-name id="__14">taskFlowAdapter</managed-bean-name>
       <managed-bean-class id="__17">soadev.taskflowadapter.view.backing.TaskFlowAdapterForm</managed-bean-class>
-      <managed-bean-scope id="__16">pageFlow</managed-bean-scope>
+      <managed-bean-scope id="__16">view</managed-bean-scope>
     </managed-bean>
     <view id="remote_adapter">
       <page>/fragments/soadev/remote_adapter.jsff</page>

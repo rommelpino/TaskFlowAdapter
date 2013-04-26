@@ -18,6 +18,8 @@
           usageId="soadev_taskflowadapter_view_sample3PageDef"/>
     <page path="/sample4.jspx"
           usageId="soadev_taskflowadapter_view_sample4PageDef"/>
+    <page path="/fragments/sample/view1.jsff"
+          usageId="soadev_taskflowadapter_view_view1PageDef"/>
   </pageMap>
   <pageDefinitionUsages>
     <page id="soadev_taskflowadapter_view_indexPageDef"
@@ -30,5 +32,11 @@
           path="soadev.taskflowadapter.view.pageDefs.pageDefs.sample3PageDef"/>
     <page id="soadev_taskflowadapter_view_sample4PageDef"
           path="soadev.taskflowadapter.view.pageDefs.pageDefs.sample4PageDef"/>
+    <page id="soadev_taskflowadapter_view_view1PageDef"
+          path="fragments.sample.view1PageDef"/>
   </pageDefinitionUsages>
+  <dataControlUsages>
+    <dc id="TaskFlowAdapterHelper"
+        path="soadev.taskflowadapter.view.TaskFlowAdapterHelper"/>
+  </dataControlUsages>
 </Application>

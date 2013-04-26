@@ -11,14 +11,25 @@
               xmlns="http://xmlns.oracle.com/adf/controller/binding"
               parametersMap="#{viewScope.fragmentWrapper.parameterMap}"/>
   </executables>
-  <bindings/>
+  <bindings>
+    <methodAction id="launchActivity"
+                  InstanceName="TaskFlowAdapterHelper.dataProvider"
+                  DataControl="TaskFlowAdapterHelper" RequiresUpdateModel="true"
+                  Action="invokeMethod" MethodName="launchActivity"
+                  IsViewObjectMethod="false">
+      <NamedData NDName="title" NDType="java.lang.String"/>
+      <NamedData NDName="taskFlowId" NDType="java.lang.String"/>
+      <NamedData NDName="params" NDType="java.util.Map"/>
+    </methodAction>
+  </bindings>
   <eventMap xmlns="http://xmlns.oracle.com/adfm/contextualEvent">
-    <event name="transDirtyEvent">
+    <event name="launchActivityEvent">
       <producer region="*">
-        <consumer handler="setExpressionValue">
+        <consumer handler="launchActivity">
           <parameters>
-            <parameter name="expression" value="\#{viewScope.itemContainerForm.dirty}"/>
-             <parameter name="newValue" value="#{payLoad}"/>
+            <parameter name="title" value="#{payLoad.title}"/>
+            <parameter name="taskFlowId" value="#{payLoad.taskFlowId}"/>
+            <parameter name="params" value="#{parameterMap}"/>
           </parameters>
         </consumer>
       </producer>

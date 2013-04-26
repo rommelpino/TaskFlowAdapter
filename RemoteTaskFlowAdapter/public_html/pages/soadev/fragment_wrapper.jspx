@@ -7,8 +7,20 @@
   <f:view>
     <af:document id="d1">
       <af:form id="f1">
-        <af:region value="#{bindings.dynamicRegion1.regionModel}" id="r1"
-                   regionNavigationListener="#{viewScope.fragmentWrapper.regionNavigationListener}"/>
+        <af:panelStretchLayout id="psl1" bottomHeight="0px">
+          <f:facet name="bottom">
+            <af:group id="g1">
+              <af:commandButton id="launcherButton" action="launchActivity"
+                                binding="#{viewScope.fragmentWrapper.launcherButton}"
+                                useWindow="true" windowHeight="500"
+                                windowWidth="700" visible="false"/>
+            </af:group>
+          </f:facet>
+          <f:facet name="center">
+            <af:region value="#{bindings.dynamicRegion1.regionModel}" id="r1"
+                       regionNavigationListener="#{viewScope.fragmentWrapper.regionNavigationListener}"/>
+          </f:facet>
+        </af:panelStretchLayout>
       </af:form>
     </af:document>
   </f:view>

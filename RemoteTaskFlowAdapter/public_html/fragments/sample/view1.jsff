@@ -13,6 +13,8 @@
     <f:facet name="top">
       <af:toolbar id="t1">
         <af:commandToolbarButton text="Done" id="ctb1" action="done"/>
+        <af:commandToolbarButton text="Open Detail" id="ctb2"
+                                 actionListener="#{viewScope.sampleForm.openDetail}"/>
       </af:toolbar>
     </f:facet>
   </af:panelStretchLayout>

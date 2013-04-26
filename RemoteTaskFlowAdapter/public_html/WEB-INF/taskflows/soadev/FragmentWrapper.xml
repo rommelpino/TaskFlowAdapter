@@ -10,6 +10,10 @@
       <name id="__9">parameters</name>
       <value>#{pageFlowScope.parameters}</value>
     </input-parameter-definition>
+    <input-parameter-definition id="__21">
+      <name id="__22">parameterMap</name>
+      <value>#{pageFlowScope.parameterMap}</value>
+    </input-parameter-definition>
     <managed-bean id="__2">
       <managed-bean-name id="__5">fragmentWrapper</managed-bean-name>
       <managed-bean-class id="__3">com.soadev.view.FragmentWrapperForm</managed-bean-class>
@@ -24,13 +28,12 @@
       </outcome>
     </task-flow-return>
     <task-flow-call id="taskFlowCall">
-      <dynamic-task-flow-reference>#{pageFlowScope.launchTaskFlowId}</dynamic-task-flow-reference>
+      <task-flow-reference>
+        <document>/WEB-INF/taskflows/soadev/FragmentWrapper.xml</document>
+        <id>FragmentWrapper</id>
+      </task-flow-reference>
       <input-parameter-map>#{pageFlowScope.launchParameterMap}</input-parameter-map>
-      <run-as-dialog>
-        <display-type id="__20">
-          <inline-popup/>
-        </display-type>
-      </run-as-dialog>
+      <run-as-dialog/>
     </task-flow-call>
     <control-flow-rule id="__12">
       <from-activity-id id="__13">fragment_wrapper</from-activity-id>

@@ -2,4 +2,5 @@
 <MetadataDirectory xmlns="http://xmlns.oracle.com/adfm/metainf"
                    version="11.1.1.0.0">
   <DataBindingRegistry path="soadev/taskflowadapter/view/DataBindings.cpx"/>
+  <DataControlRegistry path="soadev/taskflowadapter/view/DataControls.dcx"/>
 </MetadataDirectory>
